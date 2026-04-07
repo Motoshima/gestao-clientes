@@ -1,0 +1,100 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Clientes</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!--  NAVBAR -->
+    <nav class="navbar navbar-dark bg-warning px-4 d-flex align-items-center">
+
+    <!-- ☰ MENU -->
+    <button class="btn btn-outline-dark me-3" onclick="toggleMenu()">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <!--  BUSCA CENTRAL -->
+    <div class="mx-auto" style="max-width: 400px; width: 100%;">
+        <div class="input-group">
+            <input id="busca" type="text" class="form-control" placeholder="Buscar...">
+
+            <button onclick="buscar()" class="btn btn-outline-dark btn-danger">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- TÍTULO -->
+    <span class="navbar-brand text-dark ms-3">
+        <a href="" class="tituloHome text-dark text-decoration-none">
+            Sistema de Clientes
+        </a>
+    </span>
+
+</nav>
+
+    <!--  MENU LATERAL -->
+    <div id="menu" class="menu-lateral bg-warning">
+
+        <h5 class="mb-3">Menu</h5>
+
+      
+
+        <button onclick="logout()" class="btn btn-danger w-100">
+            Sair
+        </button>
+
+    </div>
+    <div id="overlay" class="overlay" onclick="fecharMenu()"></div>
+
+    
+
+    <!-- CONTEÚDO -->
+    <div class="container mt-5">
+
+        <div id="containerPrincipal" class="d-flex justify-content-center transition">
+
+            <!-- FORM -->
+            <div id="formCard" class="card shadow p-4">
+                <h4 class="mb-3">Cadastro de Clientes</h4>
+
+                <input type="text" id="nome" class="form-control mb-2" placeholder="Nome">
+                <input type="email" id="email" class="form-control mb-3" placeholder="Email">
+
+                <button onclick="salvar()" class="btn btn-primary w-100">
+                    Salvar
+                </button>
+            </div>
+
+            <!-- TABELA -->
+            <div id="listaCard" class="card shadow p-4 ms-4 d-none">
+                <h4>Clientes</h4>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista"></tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
